@@ -1,6 +1,6 @@
 {
-    "name": "typo3/neos-base-distribution",
-    "description" : "TYPO3 Neos Base Distribution",
+    "name": "mittwald/neos-hhvm-distribution",
+    "description" : "TYPO3 Neos Base Distribution (with HHVM patches)",
     "license": "GPL-3.0+",
     "config": {
         "vendor-dir": "Packages/Libraries",
@@ -10,7 +10,8 @@
         "typo3/neos": "dev-master",
         "typo3/neos-nodetypes": "dev-master",
         "typo3/neosdemotypo3org": "dev-master",
-        "typo3/neos-kickstarter": "dev-master"
+        "typo3/neos-kickstarter": "dev-master",
+        "mittwald/flow-hhvm": "@dev"
     },
     "require-dev": {
         "typo3/buildessentials": "dev-master",
@@ -22,9 +23,22 @@
     "suggest": {
         "ext-pdo_sqlite": "For running functional tests out-of-the-box this is required"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "/home/mhelmich/Entwicklung/Mittwald/Mittwald.HHVM",
+            "url-off": "ssh://github.com/mittwald/flow-hhvm.git"
+        }
+    ],
     "scripts": {
-        "post-update-cmd": "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
-        "post-install-cmd": "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-update-cmd": [
+            "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+            "Mittwald\\HHVM\\Composer\\Installer::postInstall"
+        ],
+        "post-install-cmd": [
+            "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+            "Mittwald\\HHVM\\Composer\\Installer::postInstall"
+        ],
         "post-package-update":"TYPO3\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
         "post-package-install":"TYPO3\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
     }
