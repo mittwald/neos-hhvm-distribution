@@ -1,5 +1,5 @@
 {
-    "name": "mittwald/neos-hhvm-distribution",
+    "name": "mittwald-typo3/neos-hhvm-distribution",
     "description" : "TYPO3 Neos Base Distribution (with HHVM patches)",
     "license": "GPL-3.0+",
     "config": {
