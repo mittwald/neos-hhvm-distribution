@@ -11,7 +11,7 @@
         "typo3/neos-nodetypes": "dev-master",
         "typo3/neosdemotypo3org": "dev-master",
         "typo3/neos-kickstarter": "dev-master",
-        "mittwald/flow-hhvm": "@dev"
+        "mittwald-typo3/flow-hhvm": "@dev"
     },
     "require-dev": {
         "typo3/buildessentials": "dev-master",
