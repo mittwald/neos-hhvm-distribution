@@ -23,13 +23,6 @@
     "suggest": {
         "ext-pdo_sqlite": "For running functional tests out-of-the-box this is required"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "/home/mhelmich/Entwicklung/Mittwald/Mittwald.HHVM",
-            "url-off": "ssh://github.com/mittwald/flow-hhvm.git"
-        }
-    ],
     "scripts": {
         "post-update-cmd": [
             "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
